@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # recon_pipeline_enhanced.sh
-# Created by: Pradyumn Tiware
+# Created by: PradyumnTiwareNexus
 # Version: 2.1
 # Title: Recon Pipeline Enhanced — Wayback Methodology v2.1 + Visuals
 # Visual: 🇮🇳 (IND flag) — color scheme: indigo (primary), saffron (accent), white (bg)
