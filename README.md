@@ -139,7 +139,7 @@ If you cloned using **git**:
 
 ```bash
 cd All-in-one-recon
-````
+
 ## 2️⃣ Make the script executable
 
 ```bash chmod +x recon_pipeline_enhanced.sh
