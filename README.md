@@ -133,11 +133,13 @@ Follow these simple steps to install and run **All-in-one-recon v2.1** on your m
 git clone https://github.com/PradyumnTiwareNexus/All-in-one-recon.git
 ```
 
-## Then enter the tool folder:
+### 📂 Enter the tool directory
+
+If you cloned using **git**:
 
 ```bash
 cd All-in-one-recon
-```
+````
 ## 2️⃣ Make the script executable
 
 ```bash chmod +x recon_pipeline_enhanced.sh
