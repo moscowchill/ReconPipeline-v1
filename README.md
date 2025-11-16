@@ -339,15 +339,6 @@ Everything automated, optimized, clean output.
 
 ---
 
-## 🔥 Bonus Tip
-
-Use with Google Dorks manually:
-
-```
-site:example.com "apikey"
-site:github.com example "token"
-```
-
 ### Aggressive Mode:
 
 ```bash
