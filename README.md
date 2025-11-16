@@ -52,42 +52,55 @@ params.txt
 
 ## 🖥️ Demo Tool ⚙
 
-<div align="center">
+<div align="center" style="margin-top:4px; margin-bottom:8px;">
 
   <!-- IMAGE 1 -->
   <img src="1.png" width="720" style="
-    border-radius:12px;
-    backdrop-filter: blur(10px);
-    border:1px solid rgba(255,255,255,0.1);
-    box-shadow:0 0 20px rgba(0, 200, 255, 0.4);
+    display:block;
+    margin: 6px auto;
+    border-radius:10px;
+    border:1px solid rgba(255,255,255,0.06);
+    box-shadow: 0 8px 30px rgba(0, 140, 200, 0.12);
+    max-width:100%;
   " />
 
-  <br><br>
+  <!-- small tight gap -->
+  <div style="height:8px"></div>
 
   <!-- IMAGE 2 -->
   <img src="2.png" width="720" style="
-    border-radius:12px;
-    backdrop-filter: blur(10px);
-    border:1px solid rgba(255,255,255,0.1);
-    box-shadow:0 0 20px rgba(0, 200, 255, 0.4);
+    display:block;
+    margin: 6px auto;
+    border-radius:10px;
+    border:1px solid rgba(255,255,255,0.06);
+    box-shadow: 0 8px 30px rgba(0, 140, 200, 0.12);
+    max-width:100%;
   " />
 
-  <br><br>
+  <!-- tightened gap before caption -->
+  <div style="height:10px"></div>
 
-  <!-- GLASS EFFECT TEXT -->
+  <!-- GLASS EFFECT CAPTION -->
   <div style="
-      font-size:22px;
-      font-weight:bold;
-      padding:10px 25px;
-      color:#00eaff;
-      background:rgba(255,255,255,0.05);
-      border-radius:12px;
-      backdrop-filter:blur(12px);
-      border:1px solid rgba(255,255,255,0.15);
-      box-shadow:0 0 25px rgba(0, 200, 255, 0.5);
       display:inline-block;
+      font-size:20px;
+      font-weight:600;
+      line-height:1.25;
+      color: #dff6ff;
+      padding:10px 22px;
+      border-radius:12px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 8px 30px rgba(0,160,230,0.18), inset 0 1px 0 rgba(255,255,255,0.02);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      text-shadow: 0 2px 14px rgba(0,160,230,0.18);
+      max-width:92%;
+      text-align:center;
   ">
-    "Full Pipeline — Subdomains → HTTPX → JS → Secrets → Nuclei Target Prep"
+    <span style="color:#a7f0ff; font-size:20px; font-weight:700;">
+      "Full Pipeline — Subdomains → HTTPX → JS → Secrets → Nuclei Target Prep"
+    </span>
   </div>
 
 </div>
