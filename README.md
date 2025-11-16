@@ -53,13 +53,43 @@ params.txt
 ## 🖥️ Demo Tool ⚙
 
 <div align="center">
-  <img src="1.png" width="650" />
-</div>
 
-<div align="center">
-  <img src="2.png" width="650" />
-  <br>
-  <i>"Full Pipeline — Subdomains → HTTPX → JS → Secrets → Nuclei Target Prep"</i>
+  <!-- IMAGE 1 -->
+  <img src="1.png" width="720" style="
+    border-radius:12px;
+    backdrop-filter: blur(10px);
+    border:1px solid rgba(255,255,255,0.1);
+    box-shadow:0 0 20px rgba(0, 200, 255, 0.4);
+  " />
+
+  <br><br>
+
+  <!-- IMAGE 2 -->
+  <img src="2.png" width="720" style="
+    border-radius:12px;
+    backdrop-filter: blur(10px);
+    border:1px solid rgba(255,255,255,0.1);
+    box-shadow:0 0 20px rgba(0, 200, 255, 0.4);
+  " />
+
+  <br><br>
+
+  <!-- GLASS EFFECT TEXT -->
+  <div style="
+      font-size:22px;
+      font-weight:bold;
+      padding:10px 25px;
+      color:#00eaff;
+      background:rgba(255,255,255,0.05);
+      border-radius:12px;
+      backdrop-filter:blur(12px);
+      border:1px solid rgba(255,255,255,0.15);
+      box-shadow:0 0 25px rgba(0, 200, 255, 0.5);
+      display:inline-block;
+  ">
+    "Full Pipeline — Subdomains → HTTPX → JS → Secrets → Nuclei Target Prep"
+  </div>
+
 </div>
 
 ---
