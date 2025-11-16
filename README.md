@@ -54,8 +54,6 @@ params.txt
 
 <div align="center">
   <img src="1.png" width="650" />
-  <br>
-  <i>"Full Pipeline — Subdomains → HTTPX → JS → Secrets → Nuclei Target Prep"</i>
 </div>
 
 <div align="center">
