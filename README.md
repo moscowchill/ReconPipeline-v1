@@ -50,10 +50,16 @@ params.txt
 
 ---
 
-## 🖥️ Demo Animation
+## 🖥️ Demo Tool ⚙
 
 <div align="center">
-  <img src="https://i.imgur.com/Yl7bcBR.gif" width="650" />
+  <img src="1.png" width="650" />
+  <br>
+  <i>"Full Pipeline — Subdomains → HTTPX → JS → Secrets → Nuclei Target Prep"</i>
+</div>
+
+<div align="center">
+  <img src="2.png" width="650" />
   <br>
   <i>"Full Pipeline — Subdomains → HTTPX → JS → Secrets → Nuclei Target Prep"</i>
 </div>
