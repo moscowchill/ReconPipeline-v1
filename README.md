@@ -137,11 +137,7 @@ git clone https://github.com/PradyumnTiwareNexus/All-in-one-recon.git
 ```bash
 cd All-in-one-recon
 ```
-2️⃣ Make the script executable
-bash
-Copy code
-```chmod +x recon_pipeline_enhanced.sh
-```
+
 ## 📌 Basic Commands
 
 ### **1️⃣ Make script executable:**
