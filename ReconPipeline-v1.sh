@@ -229,15 +229,19 @@ fi
 # 4) Create live-subdomain.txt (prune non-live)
 > "$LIVE_SUBS"
 if [ -f "$HTTPX_OUT" ]; then
-  # extract first token (url) and status code; keep only common live codes
-  awk '{print $1" "$(NF-2)}' "$HTTPX_OUT" 2>/dev/null | while read -r u s; do
-    # status may include non-numeric (fallback). keep if numeric and in allowed list
-    code="$(echo "$s" | sed 's/[^0-9]//g')"
+  # extract first token (url) and status code from brackets; keep only common live codes
+  # httpx output format: URL [status] [title] [tech...]
+  while read -r line; do
+    url="$(echo "$line" | awk '{print $1}')"
+    # Extract first bracketed value which contains status code(s)
+    status_bracket="$(echo "$line" | grep -oE '\[[0-9,]+\]' | head -1)"
+    # Get the first/final status code (handles redirects like [301,200])
+    code="$(echo "$status_bracket" | grep -oE '[0-9]+' | tail -1)"
     case "$code" in
-      200|201|202|203|204|301|302|307|403|401|302) echo "$u" >> "$LIVE_SUBS";;
+      200|201|202|203|204|301|302|307|308|403|401) echo "$url" >> "$LIVE_SUBS";;
       *) ;;
     esac
-  done
+  done < "$HTTPX_OUT"
   sort -u "$LIVE_SUBS" -o "$LIVE_SUBS"
   echo "[*] Live hosts: $(wc -l < "$LIVE_SUBS")" | tee -a "$LOG"
   # Overwrite final_subdomains with only live ones (user wanted to drop inactive)
@@ -272,7 +276,7 @@ if [ -f "$LIVE_SUBS" ]; then
         done >> "$JS_URLS"
 
     # inline references (import/fetch strings)
-    echo "$html" | grep -oE "['\"]([^'\"]+\.js)['\"]" \
+    echo "$html" | grep -oE "['\"][^'\"]+\.js['\"]" \
       | sed -E "s/['\"]//g" \
       | while read -r src; do
           if [[ "$src" =~ ^// ]]; then
