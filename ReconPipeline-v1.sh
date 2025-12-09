@@ -261,8 +261,8 @@ if [ -f "$LIVE_SUBS" ]; then
     html=$(curl -sS --max-time "$CURL_TIMEOUT" "$url" || true)
 
     # script src attributes
-    echo "$html" | grep -oE 'src=["'"''][^"'"'']+\.js' \
-      | sed -E 's/src=["'"'']//g' \
+    echo "$html" | grep -oE 'src=["'"'"'][^"'"'"']+\.js' \
+      | sed -E 's/src=["'"'"']//g' \
       | while read -r src; do
           if [[ "$src" =~ ^// ]]; then
             echo "https:$src"
