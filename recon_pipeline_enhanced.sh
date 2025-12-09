@@ -41,6 +41,59 @@
 set -euo pipefail
 IFS=$'\n\t'
 
+# ============================================
+# DEPENDENCY CHECK
+# ============================================
+check_dependencies() {
+  echo "[*] Checking dependencies..."
+
+  local required_tools=("subfinder" "amass" "httpx" "gau" "curl" "rg")
+  local optional_tools=("assetfinder" "sublist3r" "chaos" "gf" "uro")
+  local missing_required=()
+  local missing_optional=()
+
+  for tool in "${required_tools[@]}"; do
+    if ! command -v "$tool" &>/dev/null; then
+      missing_required+=("$tool")
+    fi
+  done
+
+  for tool in "${optional_tools[@]}"; do
+    if ! command -v "$tool" &>/dev/null; then
+      missing_optional+=("$tool")
+    fi
+  done
+
+  if [ ${#missing_required[@]} -gt 0 ]; then
+    echo "[!] ERROR: Missing required tools: ${missing_required[*]}"
+    echo ""
+    echo "Install with:"
+    echo "  go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest"
+    echo "  go install -v github.com/owasp-amass/amass/v4/...@master"
+    echo "  go install -v github.com/projectdiscovery/httpx/cmd/httpx@latest"
+    echo "  go install -v github.com/lc/gau/v2/cmd/gau@latest"
+    echo "  sudo apt install curl ripgrep"
+    exit 1
+  fi
+
+  if [ ${#missing_optional[@]} -gt 0 ]; then
+    echo "[!] Optional tools not installed (will skip): ${missing_optional[*]}"
+    echo "    Install for full functionality:"
+    echo "      go install -v github.com/tomnomnom/assetfinder@latest"
+    echo "      pip3 install sublist3r"
+    echo "      go install -v github.com/projectdiscovery/chaos-client/cmd/chaos@latest"
+    echo "      go install -v github.com/tomnomnom/gf@latest"
+    echo "      go install -v github.com/s0md3v/uro@latest"
+    echo ""
+  fi
+
+  echo "[+] Dependency check passed."
+  echo ""
+}
+
+# Run dependency check first
+check_dependencies
+
 if [ $# -ne 1 ]; then
   echo "Usage: $0 <domain>"
   exit 1
