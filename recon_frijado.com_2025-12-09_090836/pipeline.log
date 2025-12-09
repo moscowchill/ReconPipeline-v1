@@ -1,0 +1,7 @@
+[*] Output directory: ./recon_frijado.com_2025-12-09_090836
+[*] Running subfinder...
+[*] Running amass enum (passive)...
+[!] assetfinder not found — skipping.
+[!] sublist3r not found — skipping.
+[!] chaos tool not found — skipping.
+[*] Running gau for historical urls (this may add js links and subdomains)
